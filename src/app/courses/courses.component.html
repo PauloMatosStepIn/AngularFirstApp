@@ -1,0 +1,47 @@
+<h1>{{ title }}</h1>
+<ul>
+  <li *ngFor="let course of courses">
+    {{ course }}
+  </li>
+</ul>
+<button class="btn btn-primary">test of Bootstrap</button>
+<br />
+<button class="btn btn-primary" [class.active]="isActive">
+  test of Class Binding
+</button>
+<br />
+<button
+  class="btn btn-primary"
+  [style.backgroundColor]="isActive ? 'red' : 'pink'"
+>
+  test of style Binding
+</button>
+<br />
+<button class="btn btn-primary" (click)="toggleIsActive()">Toggle Event</button>
+<br />
+<div (click)="ClickDiv($event)">
+  <button class="btn btn-primary" (click)="ClickBtn($event)">Click Btn</button>
+  <button class="btn btn-primary" (click)="ClickBtnNoBubbling($event)">
+    Click Btn w/prevent Event Bubbling
+  </button>
+</div>
+<input (keyup.enter)="onKeyUp($event)" class="form-control" />
+
+<label for="FromTemplateVar">texto (from template var)</label>
+<input
+  id="FromTemplateVar"
+  #texto
+  (keyup.enter)="onKeyUpFromVar(texto.value)"
+  class="form-control"
+/>
+
+<input (keyup.enter)="onKeyUp($event)" class="form-control" />
+
+<label for="TwoWayBinding">email (Two Way Binding)</label>
+<input
+  id="TwoWayBinding"
+  [(ngModel)]="email"
+  (keyup.enter)="onKeyUpTwoWayBinding()"
+  class="form-control"
+/>
+
