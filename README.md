@@ -1,6 +1,7 @@
 
-# Angular First App && Fundamentals
-## Geting Start with Angular
+# Angular First App & Fundamentals
+
+# Geting Start with Angular
 
 ### Install vscode - Visual Studio Code 
 
@@ -20,7 +21,7 @@ for now,
 
 Open a Terminal Window
 
-Install Node.Js from: https://nodejs.org/en/
+### Install Node.Js from: https://nodejs.org/en/
 
 Download and install long term support version
 
@@ -35,7 +36,7 @@ v16.15.1
 
 after that, you can use: npm (Node Package Manager)
 
-Install Angular.Cli (Angular Command-Line Interface)
+### Install Angular.Cli (Angular Command-Line Interface)
 
 npm install -g @angular/cli
 
@@ -44,15 +45,7 @@ verify if Angular.js is installed:
 ng version
 expected output:
 <<<
-
-     _                      _                 ____ _     ___
-    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
-   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
-  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
- /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
-                |___/
-
-
+...
 Angular CLI: 14.1.0
 Node: 16.15.1
 Package Manager: npm 8.11.0
@@ -70,7 +63,7 @@ Package                      Version
 
 >>>
 
-## Create a New Angular Project:
+### Create a New Angular Project:
 
 go to the directory where you want to create a sub-directory w/your project name
 
@@ -87,7 +80,7 @@ code .
 
 F11 to Full Screen
 
-Load the Application, 
+### Load the Application, 
 
 ng server
 (accept defaults)
@@ -113,13 +106,13 @@ runtime.js            | runtime       |   6.52 kB |
 
 Build at: 2022-08-01T09:04:07.052Z - Hash: 9420ef4339a6951b - Time: 11108ms
 
-** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
 
 
-√ Compiled successfully.
+Compiled successfully.
 >>>
 
-go to your browser and call: 
+### go to your browser and call: 
 
 http://127.0.0.1:4200/
 
@@ -128,36 +121,22 @@ You launch the Angular Sample page
 ### Files of the project - Basic Structure of an Angular Project
 
 src\app <- where components will be
-
 src\assets <- img...
-
 src\environments <- configurations for different environments (prod, dev)
-
 src\favicon.ico <- icon displayed in the browser
-
 src\index.html <- reference to <app-root>
-
 src\main-ts <- main module of the application
-
 src\polyfills.ts <- import some script needed for running angular
-
 src\styles.css <- global styles for the application
-
 src\test.ts <- for setting tests environment
-
 .angular-cli.json <- angular configuration
-
 .editorconfig <- settings for editor
-
 .gitignore <- to avoid some files to make part of git repository
-
 karm.conf.js <- configuration file for karma test runner
-
 package.json <- Name and App Version, List of Libraries that your App deppends
-
 tsconfig.json <- TypeScript configuration settings
 
-### Start codding:
+### Start coding:
 
 open file: src\app\app.component.ts
 
@@ -184,6 +163,7 @@ UPDATE src/app/app.module.ts (400 bytes)
 >>>
 
 ### files description:
+
 courses.component.html <- html template
 courses.component.spec.ts <- unit tests
 courses.component.ts <- component
@@ -192,7 +172,7 @@ courses.component.css <- component stylesheet
 app.module.ts <- was updated to register this new component
 
 
-
+### continue coding
 
 src\app\app.component.html
 remove "Highlight Card","Resources", "Next Steps","Terminal","Links","Footer" sections
@@ -228,10 +208,12 @@ CREATE src/app/courses.service.spec.ts (362 bytes)
 CREATE src/app/courses.service.ts (136 bytes)
 >>>
 
-files description:
+### files description:
 
 courses.service.spec.ts <- Unit tests
 courses.service.ts <- Service
+
+
 
 Edit: src/app/courses.service.ts
 to implement the service
@@ -241,7 +223,7 @@ courses.component.ts
 
 ## install bootstrap package inside angular app:
 
-npm install bootstrap
+### npm install bootstrap
 
 expected output:
 <<<
@@ -259,7 +241,6 @@ in file package.json
 in section dependencies:
 "bootstrap": "^5.2.0",
 
-
 get the path of bootstrap.css file
 node_modules\bootstrap\dist\css\bootstrap.css
 
@@ -272,7 +253,7 @@ in the end of the file: courses.component.html
 insert the line
 <button class="btn btn-primary">test of Bootstrap</button>
 
-#### class binding:
+### class binding:
 
 in the file: courses.component.html
 insert
