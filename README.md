@@ -1,7 +1,7 @@
 
 # Angular First App & Fundamentals
 
-# Geting Start with Angular
+# Getting Start with Angular
 
 ### Install vscode - Visual Studio Code 
 
