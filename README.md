@@ -3,39 +3,42 @@
 
 # Getting Start with Angular
 
-### Install vscode - Visual Studio Code 
+## Install vscode - Visual Studio Code 
 \
 Open vscode \
 \
-Open a command palette on the top (Shw All Commands) pressing:\
-Ctrl+Shift+P\
+Open a command palette on the top (Shw All Commands) pressing:
+    
+    Ctrl+Shift+P\
+
 choose: \
 install code command in path	\
 \
 You can call "code" from anywhere\
 \
-to open a vscode instance with the current directory selected you can call:\
-code .\
-\
+to open a vscode instance with the current directory selected you can call:
+
+    code .
+
 for now,\
 \
 Open a Terminal Window
 
-### Install Node.Js from: https://nodejs.org/en/
+## Install Node.Js from: https://nodejs.org/en/
 
 Download and install long term support version\
 \
 verify if node.js is installed:\
-\
-node --version\
-\
+
+    node --version\
+
 **expected output:**\
 \
 v16.15.1
 
 **after that, you can use: npm (Node Package Manager)**
 
-### Install Angular.Cli (Angular Command-Line Interface)
+## Install Angular.Cli (Angular Command-Line Interface)
 
     npm install -g &commat;angular/cli
 
@@ -213,20 +216,20 @@ or
 CREATE src/app/courses.service.spec.ts (362 bytes)\
 CREATE src/app/courses.service.ts (136 bytes)
 
-### files description:
+### **files description:**
 
 courses.service.spec.ts <- Unit tests\
 courses.service.ts <- Service
 
-Edit: src/app/courses.service.ts\
+Edit: **src/app/courses.service.ts**\
 to implement the service
 
 Use the method of the service in the contructor of \
 **courses.component.ts**
 
-## install bootstrap package inside angular app:
+## Install bootstrap package inside angular app:
 
-### npm install bootstrap
+    npm install bootstrap
 
 **expected output:**\
 npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
@@ -245,24 +248,25 @@ in section dependencies:\
 get the path of bootstrap.css file\
 node_modules\bootstrap\dist\css\bootstrap.css
 
-in src/styles.css\
-insert the line:\
-&commat;import "~bootstrap\dist\css\bootstrap.css";
+in **src/styles.css**\
+insert the line:
+    
+    @import "~bootstrap\dist\css\bootstrap.css";
 
 to verify that bootstarp is active\
-in the end of the file: courses.component.html\
-insert the line\
+in the end of the file: **courses.component.html**\
+insert the line
 
     <button class="btn btn-primary">test of Bootstrap</button>
 
-### class binding:
+### **class binding:**
 
-in the file: courses.component.html\
+in the file: **courses.component.html**\
 insert:
     
     <button class="btn btn-primary" [class.active]="isActive" >test of Class Binding</button>
 
-in the file: courses.component.ts
+in the file: **courses.component.ts**
 
 after:
 
@@ -275,26 +279,26 @@ insert:
 result: the class: "active" appears (in page source)
 
 
-### Style Binding:
+### **Style Binding:**
 
 
 [HTML DOM Style Object](https://www.w3schools.com/jsref/dom_obj_style.asp)
 
 
-in the file: courses.component.html\
+in the file: **courses.component.html**\
 insert:
 
     <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'red' : 'pink'" >test of style Binding</button>
 
-### Event Binding:
+### **Event Binding:**
 
 
-in the file: courses.component.html\
+in the file: **courses.component.html**\
 insert:
 
     <button class="btn btn-primary" (click)="toggleIsActive()" >Toggle Event</button>
 
-in the file: courses.component.ts\
+in the file: **courses.component.ts**\
 after:\
 >export class CoursesComponent implements OnInit {\
 	  isActive = true;
@@ -312,24 +316,24 @@ insert:
       console.log('ClickBtnNoBubbling', $event);
     }
 
-### Event Filter:
+### **Event Filter:**
 
 
-in the file: courses.component.html\
+in the file: **courses.component.html**\
 insert:
 
     <input (keyup.enter)="onKeyUp()"  class="form-control" />;
 
-in the file: courses.component.ts\
+in the file: **courses.component.ts**\
 insert:
 
     onKeyUp(){
       console.log("Enter pressed");
     }
 
-### Template Variables:
+### **Template Variables:**
 
-in the file: courses.component.html\
+in the file: **courses.component.html**\
 insert:
 
     <input
@@ -339,14 +343,14 @@ insert:
       class="form-control"
     />
 
-in the file: courses.component.ts\
+in the file: **courses.component.ts**\
 insert:
 
     onKeyUpFromVar(texto: string){
         console.log('You entered : ', texto );
       }
 
-### Two Way Bindings (Banana in the Box Sintax)
+### **Two Way Bindings (Banana in the Box Sintax)**
 
 Requirements:\
 on app.module.ts
@@ -355,7 +359,7 @@ import { FormsModule } from '&commat;angular/forms';
 
 Imports [..., FormsModule]
 
-in the file: courses.component.html\
+in the file: **courses.component.html**\
 insert:
 
     <input
@@ -365,7 +369,7 @@ insert:
       class="form-control"
     />
 
-in the file: courses.component.ts\
+in the file: **courses.component.ts**\
 insert:
 
       email = 'me@mail.com';
