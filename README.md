@@ -238,7 +238,7 @@ insert the line:\
 to verify that bootstarp is active\
 in the end of the file: courses.component.html\
 insert the line\
-&lt;button class="btn btn-primary"&gt;test of Bootstrap&lt;/button&gt;
+&lt;button class="btn btn-primary"&gt;test of Bootstrap&lt;&sol;button&gt;
 
 ### class binding:
 
