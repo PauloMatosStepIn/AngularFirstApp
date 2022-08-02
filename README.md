@@ -233,12 +233,12 @@ node_modules\bootstrap\dist\css\bootstrap.css
 
 in src/styles.css\
 insert the line:\
-@import "~bootstrap\dist\css\bootstrap.css";
+&commat;import "~bootstrap\dist\css\bootstrap.css";
 
 to verify that bootstarp is active\
 in the end of the file: courses.component.html\
 insert the line\
-<button class="btn btn-primary">test of Bootstrap</button>
+&lt;button class="btn btn-primary">test of Bootstrap</button>
 
 ### class binding:
 
