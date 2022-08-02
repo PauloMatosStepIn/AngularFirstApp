@@ -1,5 +1,5 @@
 
-# Angular First App & Fundamentals [Demo Site](angularfirstapp.stepinportugal.com)
+# Angular First App & Fundamentals [Demo Site](http://angularfirstapp.stepinportugal.com)
 
 # Getting Start with Angular
 
