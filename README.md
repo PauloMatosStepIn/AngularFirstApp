@@ -37,7 +37,7 @@ v16.15.1
 
 ### Install Angular.Cli (Angular Command-Line Interface)
 
-npm install -g @angular/cli
+npm install -g &commat;angular/cli
 
 verify if Angular.js is installed:
 
@@ -54,10 +54,10 @@ Angular:\
 
 Package                      Version\
 ------------------------------------------------------\
-@angular-devkit/architect    0.1401.0 (cli-only)\
-@angular-devkit/core         14.1.0 (cli-only)\
-@angular-devkit/schematics   14.1.0 (cli-only)\
-@schematics/angular          14.1.0 (cli-only)
+&commat;angular-devkit/architect    0.1401.0 (cli-only)\
+&commat;angular-devkit/core         14.1.0 (cli-only)\
+&commat;angular-devkit/schematics   14.1.0 (cli-only)\
+&commat;schematics/angular          14.1.0 (cli-only)
 
 
 
@@ -65,7 +65,7 @@ Package                      Version\
 
 go to the directory where you want to create a sub-directory w/your project name
 
-ng new <Project Name>\
+ng new &lt;Project Name&gt;\
 (accept defaults)
 
 ng new hello-world
@@ -116,21 +116,21 @@ You launch the Angular Sample page
 
 ### Files of the project - Basic Structure of an Angular Project
 
-src\app <- where components will be\
-src\assets <- img...\
-src\environments <- configurations for different environments (prod, dev)\
-src\favicon.ico <- icon displayed in the browser\
-src\index.html <- reference to <app-root>\
-src\main-ts <- main module of the application\
-src\polyfills.ts <- import some script needed for running angular\
-src\styles.css <- global styles for the application\
-src\test.ts <- for setting tests environment
-.angular-cli.json <- angular configuration\
-.editorconfig <- settings for editor\
-.gitignore <- to avoid some files to make part of git repository\
-karm.conf.js <- configuration file for karma test runner\
-package.json <- Name and App Version, List of Libraries that your App deppends\
-tsconfig.json <- TypeScript configuration settings
+src\app &lt;- where components will be\
+src\assets &lt;- img...\
+src\environments &lt;- configurations for different environments (prod, dev)\
+src\favicon.ico &lt;- icon displayed in the browser\
+src\index.html &lt;- reference to &lt;app-root&gt;\
+src\main-ts &lt;- main module of the application\
+src\polyfills.ts &lt;- import some script needed for running angular\
+src\styles.css &lt;- global styles for the application\
+src\test.ts &lt;- for setting tests environment
+.angular-cli.json &lt;- angular configuration\
+.editorconfig &lt;- settings for editor\
+.gitignore &lt;- to avoid some files to make part of git repository\
+karm.conf.js &lt;- configuration file for karma test runner\
+package.json &lt;- Name and App Version, List of Libraries that your App deppends\
+tsconfig.json &lt;- TypeScript configuration settings
 
 ### Start coding:
 
@@ -159,11 +159,11 @@ UPDATE src/app/app.module.ts (400 bytes)
 
 ### files description:
 
-courses.component.html <- html template\
-courses.component.spec.ts <- unit tests\
-courses.component.ts <- component\
-courses.component.css <- component stylesheet\
-app.module.ts <- was updated to register this new component
+courses.component.html &lt;- html template\
+courses.component.spec.ts &lt;- unit tests\
+courses.component.ts &lt;- component\
+courses.component.css &lt;- component stylesheet\
+app.module.ts &lt;- was updated to register this new component
 
 ### continue coding
 
@@ -173,13 +173,13 @@ remove "Clouds" svg\
 keep angular logo on the header\
 remove Angular Links from the header\
 insert after logo:\
-<span>{{ title }}</span>
+&lt;span&gt;{{ title }}&lt;/span&gt;
 
 src\index.html\
 change:\
-<title>HelloWorld</title>\
+&lt;title&gt;HelloWorld&lt;/title&gt;\
 by\
-<title>Angular First App</title>
+&lt;title&gt;Angular First App&lt;/title&gt;
 
 (use Ctrl+P to navigate among giles in vscode)
 
@@ -201,8 +201,8 @@ CREATE src/app/courses.service.ts (136 bytes)
 
 ### files description:
 
-courses.service.spec.ts <- Unit tests\
-courses.service.ts <- Service
+courses.service.spec.ts &lt;- Unit tests\
+courses.service.ts &lt;- Service
 
 Edit: src/app/courses.service.ts\
 to implement the service
@@ -238,13 +238,13 @@ insert the line:\
 to verify that bootstarp is active\
 in the end of the file: courses.component.html\
 insert the line\
-&lt;button class="btn btn-primary">test of Bootstrap</button>
+&lt;button class="btn btn-primary"&gt;test of Bootstrap&lt;/button&gt;
 
 ### class binding:
 
 in the file: courses.component.html\
 insert\
-<button class="btn btn-primary" [class.active]="isActive" >test of Class Binding</button>
+&lt;button class="btn btn-primary" [class.active]="isActive" &gt;test of Class Binding&lt;/button&gt;
 
 in the file: courses.component.ts
 
@@ -263,14 +263,14 @@ https://www.w3schools.com/jsref/dom_obj_style.asp
 
 in the file: courses.component.html\
 insert:\
-<button class="btn btn-primary" [style.backgroundColor]="isActive ? 'red' : 'pink'" >test of style Binding</button>
+&lt;button class="btn btn-primary" [style.backgroundColor]="isActive ? 'red' : 'pink'" &gt;test of style Binding&lt;/button&gt;
 
 ### Event Binding:
 
 in the file: courses.component.html\
 insert:
 
-<button class="btn btn-primary" (click)="toggleIsActive()" >Toggle Event</button>
+&lt;button class="btn btn-primary" (click)="toggleIsActive()" &gt;Toggle Event&lt;/button&gt;
 
 in the file: courses.component.ts\
 after:\
@@ -295,7 +295,7 @@ preventing Event Bubbling to the parent element:
 in the file: courses.component.html\
 insert:
 
-	<input (keyup.enter)="onKeyUp()"  class="form-control" />
+	&lt;input (keyup.enter)="onKeyUp()"  class="form-control" /&gt;
 
 in the file: courses.component.ts\
 insert:
@@ -309,12 +309,12 @@ insert:
 in the file: courses.component.html\
 insert:
 
-<input\
+&lt;input\
   id="FromTemplateVar"\
   #texto\
   (keyup.enter)="onKeyUpFromVar(texto.value)"\
   class="form-control"\
-/>
+/&gt;
 
 in the file: courses.component.ts\
 insert:
@@ -328,24 +328,24 @@ onKeyUpFromVar(texto: string){\
 Requirements:\
 on app.module.ts
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '&commat;angular/forms';
 
 Imports [..., FormsModule]
 
 in the file: courses.component.html\
 insert:
 
-<input\
+&lt;input\
   id="TwoWayBinding"\
   [(ngModel)]="email"\
   (keyup.enter)="onKeyUpTwoWayBinding()"\
   class="form-control"\
-/>
+/&gt;
 
 in the file: courses.component.ts\
 insert:
 
-  email = 'me@mail.com';
+  email = 'me&commat;mail.com';
 
   onKeyUpTwoWayBinding() {\
     console.log(this.email);\

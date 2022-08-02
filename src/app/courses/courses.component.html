@@ -4,7 +4,35 @@
     {{ course }}
   </li>
 </ul>
+<div class="code">
+  <div>Angular ngFor Directive:</div>
+  <pre>
+    &lt;ul&gt;
+      &lt;li *ngFor="let course of courses"&gt;
+      &lcub; &lcub; course &rcub; &rcub; 
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  </pre>
+</div>
+
 <button class="btn btn-primary">test of Bootstrap</button>
+
+<div class="code">
+  <div>Install bootstrap package inside angular app:</div>
+  <pre>
+    npm install bootstrap
+
+    get the path of bootstrap.css file:
+      node_modules\bootstrap\dist\css\bootstrap.css
+
+      in src/styles.css
+        insert the line:
+          @import "~bootstrap\dist\css\bootstrap.css";
+      
+      
+  </pre>
+</div>
+
 <br />
 <button class="btn btn-primary" [class.active]="isActive">
   test of Class Binding
@@ -44,4 +72,3 @@
   (keyup.enter)="onKeyUpTwoWayBinding()"
   class="form-control"
 />
-
