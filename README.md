@@ -9,7 +9,7 @@ Open vscode \
 \
 Open a command palette on the top (Shw All Commands) pressing:
     
-    Ctrl+Shift+P\
+    Ctrl+Shift+P
 
 choose: \
 install code command in path	\
@@ -28,9 +28,9 @@ Open a Terminal Window
 
 Download and install long term support version\
 \
-verify if node.js is installed:\
+verify if node.js is installed:
 
-    node --version\
+    node --version
 
 **expected output:**\
 \
@@ -374,6 +374,6 @@ insert:
 
       email = 'me@mail.com';
 
-      onKeyUpTwoWayBinding() {\
-        console.log(this.email);\
+      onKeyUpTwoWayBinding() {
+        console.log(this.email);
       }
