@@ -37,11 +37,12 @@ v16.15.1
 
 ### Install Angular.Cli (Angular Command-Line Interface)
 
-npm install -g &commat;angular/cli
+    npm install -g &commat;angular/cli
 
 verify if Angular.js is installed:
 
-ng version\
+    ng version
+
 **expected output:**\
 ...\
 Angular CLI: 14.1.0\
@@ -65,7 +66,8 @@ Package                      Version\
 
 go to the directory where you want to create a sub-directory w/your project name
 
-ng new &lt;Project Name&gt;\
+    ng new <Project Name>
+
 (accept defaults)
 
 ng new hello-world
@@ -76,14 +78,15 @@ code .
 
 (use the new vscode window, close the previous)\
 
-F11 to Full Screen\
+F11 to Full Screen
 
 ### Load the Application, 
 
-ng server\
+    ng serve
+
 (accept defaults)
 
-**expected output:**\
+**expected output:**
 
 ? Would you like to share anonymous usage data about this project with the Angular Team at\
 Google under Google’s Privacy Policy at https://policies.google.com/privacy. For more\
@@ -91,7 +94,7 @@ details and how to change this setting, see https://angular.io/analytics. No\
 Global setting: enabled\
 Local setting: disabled\
 Effective status: disabled\
-Browser application bundle generation complete.\
+Browser application bundle generation complete.
 
 Initial Chunk Files   | Names         |  Raw Size\
 vendor.js             | vendor        |   1.73 MB | \
@@ -116,54 +119,58 @@ You launch the Angular Sample page
 
 ### Files of the project - Basic Structure of an Angular Project
 
-src\app &lt;- where components will be\
-src\assets &lt;- img...\
-src\environments &lt;- configurations for different environments (prod, dev)\
-src\favicon.ico &lt;- icon displayed in the browser\
-src\index.html &lt;- reference to &lt;app-root&gt;\
-src\main-ts &lt;- main module of the application\
-src\polyfills.ts &lt;- import some script needed for running angular\
-src\styles.css &lt;- global styles for the application\
-src\test.ts &lt;- for setting tests environment
-.angular-cli.json &lt;- angular configuration\
-.editorconfig &lt;- settings for editor\
-.gitignore &lt;- to avoid some files to make part of git repository\
-karm.conf.js &lt;- configuration file for karma test runner\
-package.json &lt;- Name and App Version, List of Libraries that your App deppends\
-tsconfig.json &lt;- TypeScript configuration settings
+src\app <- where components will be\
+src\assets <- img...\
+src\environments <- configurations for different environments (prod, dev)\
+src\favicon.ico <- icon displayed in the browser\
+src\index.html <- reference to <app-root>\
+src\main-ts <- main module of the application\
+src\polyfills.ts <- import some script needed for running angular\
+src\styles.css <- global styles for the application\
+src\test.ts <- for setting tests environment
+.angular-cli.json <- angular configuration\
+.editorconfig <- settings for editor\
+.gitignore <- to avoid some files to make part of git repository\
+karm.conf.js <- configuration file for karma test runner\
+package.json <- Name and App Version, List of Libraries that your App deppends\
+tsconfig.json <- TypeScript configuration settings
 
 ### Start coding:
 
 open file: src\app\app.component.ts
 
-change :\
-	title = 'hello-world';\
-to\
-	title = 'Angular';
+change :
+  >  title = 'hello-world';
+
+to
+
+  >  title = 'Angular';
 
 The Output in the browser changed
 
 ### generate a new component:
 
-ng generate component  courses
+    ng generate component  courses
 or 
-ng g c courses
 
-**expected output:**\
-CREATE src/app/courses/courses.component.html (22 bytes)\
-CREATE src/app/courses/courses.component.spec.ts (606 bytes)\
-CREATE src/app/courses/courses.component.ts (279 bytes)\
-CREATE src/app/courses/courses.component.css (0 bytes)\
-UPDATE src/app/app.module.ts (400 bytes)
+    ng g c courses
+
+**expected output:**
+  
+    CREATE src/app/courses/courses.component.html (22 bytes)
+    CREATE src/app/courses/courses.component.spec.ts (606 bytes)
+    CREATE src/app/courses/courses.component.ts (279 bytes)
+    CREATE src/app/courses/courses.component.css (0 bytes)
+    UPDATE src/app/app.module.ts (400 bytes)
 
 
 ### files description:
 
-courses.component.html &lt;- html template\
-courses.component.spec.ts &lt;- unit tests\
-courses.component.ts &lt;- component\
-courses.component.css &lt;- component stylesheet\
-app.module.ts &lt;- was updated to register this new component
+    courses.component.html <- html template
+    courses.component.spec.ts <- unit tests
+    courses.component.ts <- component
+    courses.component.css <- component stylesheet
+    app.module.ts <- was updated to register this new component
 
 ### continue coding
 
@@ -172,16 +179,21 @@ remove "Highlight Card","Resources", "Next Steps","Terminal","Links","Footer" se
 remove "Clouds" svg\
 keep angular logo on the header\
 remove Angular Links from the header\
-insert after logo:\
-&lt;span&gt;{{ title }}&lt;/span&gt;
+insert after logo:
 
-src\index.html\
-change:\
-&lt;title&gt;HelloWorld&lt;/title&gt;\
-by\
-&lt;title&gt;Angular First App&lt;/title&gt;
+    <span>{{ title }}</span>;
 
-(use Ctrl+P to navigate among giles in vscode)
+src\index.html
+
+change:
+    
+    <title>HelloWorld</title>
+
+by
+
+    <title>Angular First App</title>
+
+(use Ctrl+P to navigate among files in vscode)
 
 Edit component courses:
 
@@ -191,9 +203,11 @@ to use the directive *ngFor
 
 ### criar service couses:
 
-ng generate service courses\
-or \
-ng g s courses	
+    ng generate service courses
+
+or 
+
+    ng g s courses	
 
 **expected result:**\
 CREATE src/app/courses.service.spec.ts (362 bytes)\
@@ -201,14 +215,14 @@ CREATE src/app/courses.service.ts (136 bytes)
 
 ### files description:
 
-courses.service.spec.ts &lt;- Unit tests\
-courses.service.ts &lt;- Service
+courses.service.spec.ts <- Unit tests\
+courses.service.ts <- Service
 
 Edit: src/app/courses.service.ts\
 to implement the service
 
 Use the method of the service in the contructor of \
-courses.component.ts
+**courses.component.ts**
 
 ## install bootstrap package inside angular app:
 
@@ -238,90 +252,99 @@ insert the line:\
 to verify that bootstarp is active\
 in the end of the file: courses.component.html\
 insert the line\
-&lt;button class="btn btn-primary"&gt;test of Bootstrap&lt;&sol;button&gt;
+
+    <button class="btn btn-primary">test of Bootstrap</button>
 
 ### class binding:
 
 in the file: courses.component.html\
-insert\
-&lt;button class="btn btn-primary" [class.active]="isActive" &gt;test of Class Binding&lt;/button&gt;
+insert:
+    
+    <button class="btn btn-primary" [class.active]="isActive" >test of Class Binding</button>
 
 in the file: courses.component.ts
 
-after:\ 
-export class CoursesComponent implements OnInit {\
-insert:\
-  isActive = true;
+after:
+
+>export class CoursesComponent implements OnInit {
+
+insert:
+  
+    isActive = true;
 
 result: the class: "active" appears (in page source)
 
 
-#### Style Binding:
+### Style Binding:
 
-HTML DOM Style Object\
-https://www.w3schools.com/jsref/dom_obj_style.asp
 
-in the file: courses.component.html\
-insert:\
-&lt;button class="btn btn-primary" [style.backgroundColor]="isActive ? 'red' : 'pink'" &gt;test of style Binding&lt;/button&gt;
+[HTML DOM Style Object](https://www.w3schools.com/jsref/dom_obj_style.asp)
 
-### Event Binding:
 
 in the file: courses.component.html\
 insert:
 
-&lt;button class="btn btn-primary" (click)="toggleIsActive()" &gt;Toggle Event&lt;/button&gt;
+    <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'red' : 'pink'" >test of style Binding</button>
+
+### Event Binding:
+
+
+in the file: courses.component.html\
+insert:
+
+    <button class="btn btn-primary" (click)="toggleIsActive()" >Toggle Event</button>
 
 in the file: courses.component.ts\
 after:\
-	export class CoursesComponent implements OnInit {\
+>export class CoursesComponent implements OnInit {\
 	  isActive = true;
 
 insert:
 
-  toggleIsActive() {\
-    this.isActive = !this.isActive;\
-  }
+    toggleIsActive() {
+    this.isActive = !this.isActive;
+    }
 
-preventing Event Bubbling to the parent element:
+**preventing Event Bubbling** to the parent element:
 
-  ClickBtnNoBubbling($event: Event) {\
-    $event.stopPropagation();\
-    console.log('ClickBtnNoBubbling', $event);\
-  }
+    ClickBtnNoBubbling($event: Event) {
+      $event.stopPropagation();
+      console.log('ClickBtnNoBubbling', $event);
+    }
 
 ### Event Filter:
+
 
 in the file: courses.component.html\
 insert:
 
-	&lt;input (keyup.enter)="onKeyUp()"  class="form-control" /&gt;
+    <input (keyup.enter)="onKeyUp()"  class="form-control" />;
 
 in the file: courses.component.ts\
 insert:
 
-  onKeyUp(){\
-    console.log("Enter pressed");\
-  }
+    onKeyUp(){
+      console.log("Enter pressed");
+    }
 
 ### Template Variables:
 
 in the file: courses.component.html\
 insert:
 
-&lt;input\
-  id="FromTemplateVar"\
-  #texto\
-  (keyup.enter)="onKeyUpFromVar(texto.value)"\
-  class="form-control"\
-/&gt;
+    <input
+      id="FromTemplateVar"
+      #texto
+      (keyup.enter)="onKeyUpFromVar(texto.value)"
+      class="form-control"
+    />
 
 in the file: courses.component.ts\
 insert:
 
-onKeyUpFromVar(texto: string){\
-    console.log('You entered : ', texto );\
-  }
+    onKeyUpFromVar(texto: string){
+        console.log('You entered : ', texto );
+      }
 
 ### Two Way Bindings (Banana in the Box Sintax)
 
@@ -335,18 +358,18 @@ Imports [..., FormsModule]
 in the file: courses.component.html\
 insert:
 
-&lt;input\
-  id="TwoWayBinding"\
-  [(ngModel)]="email"\
-  (keyup.enter)="onKeyUpTwoWayBinding()"\
-  class="form-control"\
-/&gt;
+    <input
+      id="TwoWayBinding"
+      [(ngModel)]="email"
+      (keyup.enter)="onKeyUpTwoWayBinding()"
+      class="form-control"
+    />
 
 in the file: courses.component.ts\
 insert:
 
-  email = 'me&commat;mail.com';
+      email = 'me@mail.com';
 
-  onKeyUpTwoWayBinding() {\
-    console.log(this.email);\
-  }
+      onKeyUpTwoWayBinding() {\
+        console.log(this.email);\
+      }
