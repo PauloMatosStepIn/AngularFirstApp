@@ -5,13 +5,23 @@
   </li>
 </ul>
 <div class="code">
-  <div>Angular ngFor Directive:</div>
+  <div>Angular ngFor Directive:<br />In courses.component.html (template)</div>
   <pre>
     &lt;ul&gt;
       &lt;li *ngFor="let course of courses"&gt;
       &lcub; &lcub; course &rcub; &rcub; 
       &lt;/li&gt;
     &lt;/ul&gt;
+  </pre>
+</div>
+
+<div class="code">
+  <div>In courses.component.ts (component)</div>
+  <pre>
+    courses;
+    constructor(service: CoursesService) &lcub;
+      this.courses = service.getCourses();
+    &rcub;
   </pre>
 </div>
 
@@ -37,24 +47,128 @@
 <button class="btn btn-primary" [class.active]="isActive">
   test of Class Binding
 </button>
-<br />
+
+<div class="code">
+  <div>In courses.component.html (template)</div>
+  <pre>
+    &lt;button class="btn btn-primary" [class.active]="isActive"&gt;
+      test of Class Binding
+    &lt;/button&gt;
+  </pre>
+</div>
+
+<div class="code">
+  <div>In courses.component.ts (component)</div>
+  <pre>
+    isActive = true;
+  </pre>
+</div>
+
 <button
   class="btn btn-primary"
   [style.backgroundColor]="isActive ? 'red' : 'pink'"
 >
   test of style Binding
 </button>
-<br />
+
+<div class="code">
+  <div>In courses.component.html (template)</div>
+  <pre>
+    &lt;button
+    class="btn btn-primary"
+    [style.backgroundColor]="isActive ? 'red' : 'pink'"
+    &gt;
+      test of style Binding
+    &lt;/button&gt;
+  </pre>
+</div>
+
+<p>Change the appearance of the previous buttons:</p>
 <button class="btn btn-primary" (click)="toggleIsActive()">Toggle Event</button>
-<br />
+
+<div class="code">
+  <div>In courses.component.html (template)</div>
+  <pre>
+    &lt;button class="btn btn-primary" (click)="toggleIsActive()"&gt;Toggle Event&lt;/button&gt;
+  </pre>
+</div>
+
+<div class="code">
+  <div>In courses.component.ts (component)</div>
+  <pre>
+    toggleIsActive() &lcub;
+      this.isActive = !this.isActive;
+    &rcub;
+  </pre>
+</div>
+
 <div (click)="ClickDiv($event)">
   <button class="btn btn-primary" (click)="ClickBtn($event)">Click Btn</button>
   <button class="btn btn-primary" (click)="ClickBtnNoBubbling($event)">
     Click Btn w/prevent Event Bubbling
   </button>
 </div>
-<input (keyup.enter)="onKeyUp($event)" class="form-control" />
 
+<p>
+  When Bubbling is prevented (<b>$event.stopPropagation();</b>), the event is not propagated to the parent element
+</p>
+
+<div class="code">
+  <div>In courses.component.html (template)</div>
+  <pre>
+    &lt;div (click)="ClickDiv($event)"&gt;
+      &lt;button class="btn btn-primary" (click)="ClickBtn($event)"&gt;Click Btn&lt;/button&gt;
+      &lt;button class="btn btn-primary" (click)="ClickBtnNoBubbling($event)"&gt;
+        Click Btn w/prevent Event Bubbling
+      &lt;/button&gt;
+    &lt;/div&gt;
+  </pre>
+</div>
+
+<div class="code">
+  <div>In courses.component.ts (component)</div>
+  <pre>
+    ClickBtn($event: Event) &lcub;
+      console.log('ClickBtn', $event);
+    &rcub;
+  
+    ClickBtnNoBubbling($event: Event) &lcub;
+      $event.stopPropagation();
+      console.log('ClickBtnNoBubbling', $event);
+    &rcub;
+  
+    ClickDiv($event: Event) &lcub;
+      console.log('ClickDiv', $event);
+    &rcub;
+   </pre
+  >
+</div>
+
+
+<label for="FilterEnter"><h5>Event Filtering</h5></label>
+<input id="FilterEnter" (keyup.enter)="onKeyUp($event)" class="form-control" />
+<p>Event triggered by enter key</p>
+
+<div class="code">
+  <div>In courses.component.html (template)</div>
+  <pre>
+    &lt;input id="FilterEnter" (keyup.enter)="onKeyUp($event)" class="form-control" /&gt;
+  </pre>
+</div>
+
+<div class="code">
+  <div>In courses.component.ts (component)</div>
+  <pre>
+    onKeyUp(event: Event) &lcub;
+      const target = event.target as HTMLButtonElement;
+      if (target) &lcub;
+        console.log('You entered : ', target.value);
+      &rcub;
+    &rcub;
+  </pre>
+</div>
+
+<h5>Template Var</h5>
 <label for="FromTemplateVar">texto (from template var)</label>
 <input
   id="FromTemplateVar"
@@ -63,12 +177,55 @@
   class="form-control"
 />
 
-<input (keyup.enter)="onKeyUp($event)" class="form-control" />
+<div class="code">
+  <div>In courses.component.html (template)</div>
+  <pre>
+    &lt;input
+    id="FromTemplateVar"
+    #texto
+    (keyup.enter)="onKeyUpFromVar(texto.value)"
+    class="form-control"/&gt;  
+  </pre>
+</div>
 
-<label for="TwoWayBinding">email (Two Way Binding)</label>
+<div class="code">
+  <div>In courses.component.ts (component)</div>
+  <pre>
+    onKeyUpFromVar(texto: string) &lcub;
+      console.log('You entered : ', texto);
+    &rcub;
+  </pre>
+</div>
+
+<h5>Two Way Binding (Banana in Box Sintax)</h5>
+<label for="TwoWayBinding">Email:</label>
 <input
   id="TwoWayBinding"
   [(ngModel)]="email"
   (keyup.enter)="onKeyUpTwoWayBinding()"
   class="form-control"
 />
+
+<div class="code">
+  <div>In courses.component.html (template)</div>
+  <pre>
+    &lt;label for="TwoWayBinding"&gt;Email:&lt;/label&gt;
+    &lt;input
+      id="TwoWayBinding"
+      [(ngModel)]="email"
+      (keyup.enter)="onKeyUpTwoWayBinding()"
+      class="form-control"
+    /&gt;
+  </pre>
+</div>
+
+<div class="code">
+  <div>In courses.component.ts (component)</div>
+  <pre>
+    email = 'me@mail.com';
+
+    onKeyUpTwoWayBinding() &lcub;
+      console.log(this.email);
+    &rcub;
+  </pre>
+</div>
